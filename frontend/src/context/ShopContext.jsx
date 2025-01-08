@@ -1,25 +1,30 @@
- 
-import { createContext } from "react";
-import { products } from "../assets/frontend_assets/assets";
+import { createContext, useState } from "react";
+import { products } from "../assets/frontend_assets/assets"; // Ensure this path is correct
 
 export const ShopContext = createContext();
 
-const currency = '₹';
-const deliveryFee = 10;
+const ShopContextProvider = ({ children }) => {
+    const [search, setSearch] = useState("");
+    const [showSearch, setShowSearch] = useState(false);
 
-const ShopContextProvider = ({ children }) => { // Destructure children from props
+    const currency = "₹";
+    const deliveryFee = 10;
+
     const value = {
         products,
         currency,
-        deliveryFee
+        deliveryFee,
+        search,
+        setSearch,
+        showSearch,
+        setShowSearch,
     };
 
     return (
         <ShopContext.Provider value={value}>
-            {children}  
+            {children}
         </ShopContext.Provider>
     );
 };
 
 export default ShopContextProvider;
- 

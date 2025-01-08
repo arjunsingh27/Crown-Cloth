@@ -102,7 +102,7 @@ export const products = [
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 100,
         image: [p_img1],
-        category: "Women",
+        category: "Women , All",
         subCategory: "Topwear",
         sizes: ["S", "M", "L"],
         date: 1716634345448,
