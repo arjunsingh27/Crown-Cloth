@@ -15,12 +15,18 @@ import Mens from "./pages/Mens";
 import Womens from "./pages/Womens";
 import Kids from "./pages/Kids";
 import SearchBar from "./components/SearchBar";
+import { Toaster } from 'react-hot-toast';
+// import 'react-toastify/dist/ReactToastify.css';
+
+// // import { ToastContainer, toast } from 'material-react-toastify';
+// // import 'material-react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <div className="px-4 sm:px=[5vw] md:px-[7vw] lg:px-[9vw]">
       <Navbar/>
       <SearchBar/>
+      <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collection" element={<Collection />} />
@@ -29,7 +35,7 @@ const App = () => {
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/place-orders" element={<PlaceOrder />} />
+        <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/mens" element={<Mens/>}/>
         <Route path="/womens" element={<Womens/>}/>

@@ -97,12 +97,12 @@ export const assets = {
 
 export const products = [
     {
-        _id: "aaaaa",
-        name: "Women Round Neck Cotton Top",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 100,
+        _id: "SnugPro",
+        name: "SnugPro M",
+        description: "SnugPro M: Stylish, lightweight shoes designed for all-day comfort. Made with breathable materials, superior cushioning, and a durable non-slip outsole, they’re perfect for casual outings or light workouts.",
+        price: 2200,
         image: [p_img1],
-        category: "Women , All",
+        category: "Men , All",
         subCategory: "Topwear",
         sizes: ["S", "M", "L"],
         date: 1716634345448,
