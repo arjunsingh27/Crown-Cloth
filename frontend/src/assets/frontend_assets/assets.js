@@ -1,11 +1,30 @@
-import p_img1 from './p_img1.png'
+// Product 1
+// import p_img1 from './p_img1.png'
+import p_img1_1 from './p_img1_1.png'
+import p_img1_2 from './p_img1_2.png'
+import p_img1_3 from './p_img1_3.png'
+import p_img1_4 from './p_img1_4.png'
+
+// Product 2
+
 import p_img2_1 from './p_img2_1.png'
 import p_img2_2 from './p_img2_2.png'
 import p_img2_3 from './p_img2_3.png'
 import p_img2_4 from './p_img2_4.png'
-import p_img3 from './p_img3.png'
-import p_img4 from './p_img4.png'
-import p_img5 from './p_img5.png'
+
+
+//Product 3
+import p_img3_1 from './p_img3_1.png'
+import p_img3_2 from './p_img3_2.png'
+
+//Product 4 
+import p_img4_1 from './p_img4_1.png'
+
+//Product 5 
+import p_img5_1 from './p_img5_1.png'
+import p_img5_2 from './p_img5_2.png'
+import p_img5_3 from './p_img5_3.png'
+
 import p_img6 from './p_img6.png'
 import p_img7 from './p_img7.png'
 import p_img8 from './p_img8.png'
@@ -98,61 +117,63 @@ export const assets = {
 export const products = [
     {
         _id: "SnugPro",
-        name: "SnugPro M",
-        description: "SnugPro M: Stylish, lightweight shoes designed for all-day comfort. Made with breathable materials, superior cushioning, and a durable non-slip outsole, they’re perfect for casual outings or light workouts.",
-        price: 2200,
-        image: [p_img1],
-        category: "Men , All",
-        subCategory: "Topwear",
+        subname:"Dunk Low",
+        name: "University Blue",
+        description: "Originally created for the hardwood, the Dunk later took to the streets—and as they say, the rest is history. More than 35 years after its debut, the silhouette still delivers bold, defiant style and remains a coveted look for crews across both sport and culture. Now, the university-hoops OG returns, covered in crisp material overlays with heritage-inspired colour-blocking. Modern footwear technology brings the design's comfort into the 21st century, while a clean combination of white and University Blue gives this make-up a classic feel.",
+        price: 3200,
+        image: [p_img1_3,p_img1_1,p_img1_2,p_img1_4],
+        category: "Men",
+        subCategory: "Sneakers",
         sizes: ["S", "M", "L"],
         date: 1716634345448,
         bestseller: true
     },
     {
         _id: "aaaab",
-        name: "Men Round Neck Pure Cotton T-shirt",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 200,
+        
+        name: "Nike Dunk Low Retro",
+        description: "Created for the hardwood but taken to the streets, the Nike Dunk Low Retro returns with crisp overlays and original team colours. This basketball icon channels '80s vibes with premium leather in the upper that looks good and breaks in even better. Modern footwear technology helps bring the comfort into the 21st century.",
+        price: 2200,
         image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
         category: "Men",
-        subCategory: "Topwear",
-        sizes: ["M", "L", "XL"],
+        subCategory: "Sneakers",
+        sizes: ["8", "9", "10"],
         date: 1716621345448,
         bestseller: true
     },
     {
         _id: "aaaac",
-        name: "Girls Round Neck Cotton Top",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 220,
-        image: [p_img3],
-        category: "Kids",
-        subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        name: "Nike Force 1 Low EasyOn",
+        description: "The look of laces without the struggle of having to tie them? Now, that's easy. The laces on these sneakers are just for show—the top two lace loops are attached to a hook-and-loop strap so kids can fasten them fast while still enjoying the traditional look of the AF-1. But these shoes aren't just easy for kids to put on. We designed them around kids' feet for overall comfort too.",
+        price: 2700,
+        image: [p_img3_1,p_img3_2],
+        category: "Men",
+        subCategory: "Sneakers",
+        sizes: ["8", "9", "10"],
         date: 1716234545448,
         bestseller: true
     },
     {
         _id: "aaaad",
-        name: "Men Round Neck Pure Cotton T-shirt",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 110,
-        image: [p_img4],
+        name: "New Balance 9060 Black White",
+        description: "Color Shown: Black/White SKU - U9060AAA",
+        price: 2999,
+        image: [p_img4_1],
         category: "Men",
-        subCategory: "Topwear",
-        sizes: ["S", "M", "XXL"],
+        subCategory: "Sneaker",
+        sizes: ["7","8", "9", "10"],
         date: 1716621345448,
         bestseller: true
     },
     {
         _id: "aaaae",
-        name: "Women Round Neck Cotton Top",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 130,
-        image: [p_img5],
+        name: "Silhouette Ankle Boot",
+        description: "The Silhouette ankle boot is reinterpreted this season in Monogram denim for a strong signature look. One of Louis Vuitton's emblematic styles, this model is notable for its heel in the shape of a Monogram Flower. It is finished with a leather outsole, while a discreet side zip ensures easy fitting.",
+        price: "1,67,000.00",
+        image: [p_img5_2,p_img5_3],
         category: "Women",
         subCategory: "Topwear",
-        sizes: ["M", "L", "XL"],
+        sizes: ["6", "7", "8","9"],
         date: 1716622345448,
         bestseller: true
     },

@@ -38,22 +38,25 @@ const Product = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Product Images Section */}
         <div className="flex-1">
-          <div className="flex flex-col-reverse md:flex-row gap-4">
+          <div className="flex flex-col-reverse md:flex-row gap-4 ">
             {/* Thumbnail Gallery */}
-            <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto md:w-24 no-scrollbar">
+            <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto md:w-24 no-scrollbar  ">
               {productData.image.map((item, index) => (
                 <img
-                  onClick={() => setimage(item)}
-                  src={item}
-                  key={index}
-                  className={`w-20 h-20 object-cover cursor-pointer rounded-lg 
-                    ${image === item ? 'ring-2 m-1 ring-orange-500' : ''}`}
-                  alt={`Product view ${index + 1}`}
-                />
+                onMouseEnter={() => setimage(item)}
+                onClick={() => setimage(item)} // Allow clicking to select
+                onKeyDown={(e) => e.key === 'Enter' && setimage(item)} // Select on Enter key press
+                src={item}
+                key={index}
+                tabIndex={0}
+                className={`w-20 h-20 object-cover cursor-pointer rounded-lg 
+                  ${image === item ? 'ring-2 m-1 ring-orange-500' : ''}`}
+                alt={`Product view ${index + 1}`}
+              />
               ))}
             </div>
             {/* Main Image */}
-            <div className="flex-1">
+            <div className="flex-1 ">
               <img
                 src={image}
                 alt="Main product"
@@ -64,7 +67,12 @@ const Product = () => {
         </div>
 
         {/* Product Info Section */}
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-6 ">
+           {productData.subname ? 
+          <h1 className="text-gray-600 text-xl md:text-2xl ">{productData.subname}</h1>
+          : null 
+          }
+          
           <h1 className="text-2xl md:text-3xl font-semibold">{productData.name}</h1>
           
           {/* Rating */}
