@@ -10,7 +10,7 @@ const deliveryFee = 50;
 
 
 const ShopContextProvider = ({ children }) => { // Destructure children from props
-    const [search, setsearch] = useState('');
+    const [search, setsearch] = useState();
     const [showSearch, setshowSearch] = useState(false);
     const [cartItems, setcartItems] = useState({});
     

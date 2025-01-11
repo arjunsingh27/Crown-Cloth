@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState }  from "react";
+import { useContext } from "react";
 import { assets } from "../assets/frontend_assets/assets";
+import { useLocation } from "react-router-dom";
 
 const Hero = () => {
+  
+  const location = useLocation();
+  const [image,setImage]=useState(assets.hero_img)
+  useEffect(()=>{
+       if(location.pathname=="/"){
+        setImage(assets.women_cover_hero);
+       }else{
+        setImage(assets.hero_img)
+       }
+  },[location]);
+  console.log(location.pathname);
   return (
-    <div className="flex flex-col sm:flex-row border border-gray-400">
+    <div className={` flex flex-col sm:flex-row border border-gray-400  `}>
       {/* Hero Left Side */}
       <div className="w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
         <div className="text-[#414141]">
@@ -22,7 +35,7 @@ const Hero = () => {
         </div>
       </div>
       {/* Hero Right Side */}
-      <img src={assets.hero_img} alt="" className="w-1/2 "/>
+      <img src={image} alt="" className="w-full lg:w-1/2 "/>
     </div>
   );
 };

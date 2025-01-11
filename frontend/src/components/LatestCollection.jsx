@@ -18,7 +18,7 @@ const LatestCollection = () => {
   return (
      <div className="my-10">
         <div className="text-center py-8 text-3xl">
-            <Title text1={text1} text2={'COLLECTIONS'}/> 
+            <Title text1={text1} text2={' COLLECTIONS'}/> 
             <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sapiente explicabo minus soluta
             </p>

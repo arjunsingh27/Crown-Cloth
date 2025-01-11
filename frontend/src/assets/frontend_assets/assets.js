@@ -26,7 +26,12 @@ import p_img5_2 from './p_img5_2.png'
 import p_img5_3 from './p_img5_3.png'
 
 import p_img6 from './p_img6.png'
-import p_img7 from './p_img7.png'
+
+// Product 7
+
+import p_img7_1 from './p_img7_1.png'
+import p_img7_2 from './p_img7_2.png'
+import p_img7_3 from './p_img7_3.png'
 import p_img8 from './p_img8.png'
 import p_img9 from './p_img9.png'
 import p_img10 from './p_img10.png'
@@ -92,10 +97,12 @@ import contact_img from './contact_img.png'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
+import women_cover_hero from './hero_women.png'
 
 export const assets = {
     logo,
     hero_img,
+    women_cover_hero,
     cart_icon,
     dropdown_icon,
     exchange_icon,
@@ -160,7 +167,7 @@ export const products = [
         price: 2999,
         image: [p_img4_1],
         category: "Men",
-        subCategory: "Sneaker",
+        subCategory: "Sneakers",
         sizes: ["7","8", "9", "10"],
         date: 1716621345448,
         bestseller: true
@@ -190,14 +197,15 @@ export const products = [
         bestseller: true
     },
     {
-        _id: "aaaag",
-        name: "Men Tapered Fit Flat-Front Trousers",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 190,
-        image: [p_img7],
+        _id: "p_m_7",
+        subname:"Nike",
+        name: "Men Jumpman MVP Sneakers",
+        description: "Product Details PRODUCT DESIGN DETAILS :Main materials: Synthetic LeatherProduct color: Black and red logo printed detail round toe casual sneakers with mid top styling has lace-up closureEmbroidered Jumpman logoUpper is a mix of AJ6 and AJ7 elements: the tongue top and modified overlay reference the AJ6 while the semi-bootie lining homages the AJ7.Embroidered Nike Air heel logo references the AJ6 and the molded heel detail comes from the AJ8.Outsole design is a nod to the AJ6.Encapsulated Nike Air-Sole unit provide lightweight cushioning.ABOUT THE PRODUCT :We didn't invent the remixbut considering the material we get to sample, this one's a no-brainer. We fired up the SP-12 and took elements from the AJ6, 7 and 8, making them into a completely new shoe that celebrates MJ's first 3-peat championship run. With leather, textile and nubuck details, these sneakers honour one legacy while encouraging you to cement your own.Material & CareSynthetic LeatherWipe with a clean, dry cloth to remove dust",
+        price: 2800,
+        image: [p_img7_1,p_img7_2,p_img7_3],
         category: "Men",
-        subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        subCategory: "Sneakers",
+        sizes: ["8", "9", "10"],
         date: 1716621542448,
         bestseller: false
     },
