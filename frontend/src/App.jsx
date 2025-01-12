@@ -16,6 +16,7 @@ import Womens from "./pages/Womens";
 import Kids from "./pages/Kids";
 import SearchBar from "./components/SearchBar";
 import { Toaster } from 'react-hot-toast';
+import Accessories from "./pages/Accessories";
 // import 'react-toastify/dist/ReactToastify.css';
 
 // // import { ToastContainer, toast } from 'material-react-toastify';
@@ -29,6 +30,10 @@ const App = () => {
       <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/mens" element={<Mens/>}/>
+        <Route path="/womens" element={<Womens/>}/>
+        <Route path="/kids" element={<Kids/>}/>
+        <Route path="/accessories" element={<Accessories/>}/>
         <Route path="/collection" element={<Collection />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -37,9 +42,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path="/mens" element={<Mens/>}/>
-        <Route path="/womens" element={<Womens/>}/>
-        <Route path="/kids" element={<Kids/>}/>
+        
         
       </Routes>
       <Footer/>

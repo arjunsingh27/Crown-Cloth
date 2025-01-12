@@ -1,12 +1,12 @@
-import React from 'react'
-import Collection from '../components/Collection'
+import React from 'react';
+import Collection from '../components/Collection';
 
 const Mens = () => {
   return (
     <div>
-      <Collection defaultCategory={['Men']}/>  
+      <Collection defaultCategory="Men"/>  
     </div>
-  )
+  );
 }
 
-export default Mens
+export default Mens;

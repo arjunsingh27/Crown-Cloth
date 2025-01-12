@@ -32,9 +32,22 @@ import p_img6 from './p_img6.png'
 import p_img7_1 from './p_img7_1.png'
 import p_img7_2 from './p_img7_2.png'
 import p_img7_3 from './p_img7_3.png'
-import p_img8 from './p_img8.png'
+
+
+// Product 8 
+import p_img8_1 from './p_img8_1.png'
+import p_img8_2 from './p_img8_2.png'
+import p_img8_3 from './p_img8_3.png'
+import p_img8_4 from './p_img8_4.png'
+
+
 import p_img9 from './p_img9.png'
-import p_img10 from './p_img10.png'
+
+
+//Product 10 
+import p_img10_1 from './p_img10_1.png'
+import p_img10_2 from './p_img10_2.png'
+
 import p_img11 from './p_img11.png'
 import p_img12 from './p_img12.png'
 import p_img13 from './p_img13.png'
@@ -77,6 +90,20 @@ import p_img49 from './p_img49.png'
 import p_img50 from './p_img50.png'
 import p_img51 from './p_img51.png'
 import p_img52 from './p_img52.png'
+
+
+//Accessories Collection
+ 
+
+import p_img_a1_1 from './p_img_a1_1.png'
+import p_img_a1_2 from './p_img_a1_2.png'
+import p_img_a1_3 from './p_img_a1_3.png'
+import p_img_a1_4 from './p_img_a1_4.png'
+
+
+
+
+
 
 
 import logo from './logo.png'
@@ -210,14 +237,14 @@ export const products = [
         bestseller: false
     },
     {
-        _id: "aaaah",
-        name: "Men Round Neck Pure Cotton T-shirt",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 140,
-        image: [p_img8],
+        _id: "p_m_8",
+        name: "CourtJam Control 3 Tennis Shoes",
+        description: "Step into your next match with the comfort and control of these adidas tennis shoes. Their flexible Bounce midsole will keep you on your toes while Torsion System helps you translate instinct into quick cuts and slides. Sitting on a specialist hard court outsole, the mesh upper keeps your feet cool when everything's on the line.This product features at least 20% recycled materials. By reusing materials that have already been created, we help to reduce waste and our reliance on finite resources and reduce the footprint of the products we make.",
+        price: 2700,
+        image: [p_img8_1,p_img8_2,p_img8_3,p_img8_4],
         category: "Men",
-        subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        subCategory: "Sneakers",
+        sizes: ["6", "7", "8", "9","10"],
         date: 1716622345448,
         bestseller: false
     },
@@ -234,14 +261,14 @@ export const products = [
         bestseller: false
     },
     {
-        _id: "aaaaj",
-        name: "Men Tapered Fit Flat-Front Trousers",
-        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-        price: 110,
-        image: [p_img10],
+        _id: "p_m_10",
+        name: "NEW BALANCE FRESH FOAM",
+        description: "",
+        price: 2999,
+        image: [p_img10_1,p_img10_2],
         category: "Men",
-        subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        subCategory: "Sneakers",
+        sizes: ["8", "9", "10"],
         date: 1716622235448,
         bestseller: false
     },
@@ -252,7 +279,7 @@ export const products = [
         price: 120,
         image: [p_img11],
         category: "Men",
-        subCategory: "Topwear",
+        subCategory: "Formal Shoes",
         sizes: ["S", "M", "L"],
         date: 1716623345448,
         bestseller: false
@@ -743,8 +770,21 @@ export const products = [
         price: 350,
         image: [p_img52],
         category: "Men",
-        subCategory: "Winterwear",
+        subCategory: "Boots",
         sizes: ["S", "M", "L", "XL"],
+        date: 1716668445448,
+        bestseller: false
+    }
+    //Accessories Collections 
+    , {
+        _id: "p_a_1",
+        name: "CROCS TOTE BAGS",
+        description: " ",
+        price: 1999,
+        image: [p_img_a1_1,p_img_a1_2,p_img_a1_3,p_img_a1_4],
+        category: "Accessories",
+        subCategory: "handbag",
+        sizes: ["Regular Fit"],
         date: 1716668445448,
         bestseller: false
     }

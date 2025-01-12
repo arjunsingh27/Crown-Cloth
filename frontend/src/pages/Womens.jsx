@@ -4,7 +4,7 @@ import Collection from '../components/Collection'
 const Womens = () => {
   return (
     <div>
-        <Collection defaultCategory={['Women']}/>
+        <Collection defaultCategory={'Women'}/>
     </div>
   )
 }

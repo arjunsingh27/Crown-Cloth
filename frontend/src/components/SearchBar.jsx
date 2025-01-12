@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'; // Import `useContext`
-import { ShopContext } from '../context/ShopContext'; // Import context
-import { assets } from '../assets/frontend_assets/assets'; // Import assets
+import React, { useContext, useEffect, useState } from 'react';  
+import { ShopContext } from '../context/ShopContext';  
+import { assets } from '../assets/frontend_assets/assets';  
 import { useLocation } from 'react-router-dom';
 
 const SearchBar = () => {
@@ -30,14 +30,14 @@ const SearchBar = () => {
                     placeholder="Search..."
                 />
                 <img
-                    src={assets.search_icon} // Ensure this path points to the correct file
+                    src={assets.search_icon}  
                     className='w-4'
                     alt="Search Icon"
                 />
             </div>
             <img
-                onClick={() => setshowSearch(false)} // Corrected function to hide search bar
-                src={assets.cross_icon} // Add `close_icon` to assets or provide a fallback
+                onClick={() => setshowSearch(false)}  
+                src={assets.cross_icon}  
                 alt="Close"
                 className="inline w-3 cursor-pointer"
             />
