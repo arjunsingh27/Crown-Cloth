@@ -3,8 +3,8 @@ import Collection from '../components/Collection'
 
 const Accessories = () => {
   return (
-    <div><Collection defaultCategory={'Accessories'}
-    
+    <div>
+      <Collection defaultCategory={'Accessories'}
     /></div>
   )
 }

@@ -14,7 +14,9 @@ const Navbar = () => {
         <img src={assets.logo} className=" w-[200px]" alt="logo" />
       </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
-        <NavLink to="/mens" className="flex flex-col items-center gap-1 "> <p>Men</p><hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" /></NavLink>
+        <NavLink to="/mens" className="flex flex-col items-center gap-1 "> 
+        <p>Men</p><hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+        </NavLink>
         <NavLink to="/womens" className="flex flex-col items-center gap-1">
           <p>Women</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />

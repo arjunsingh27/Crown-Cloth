@@ -787,6 +787,31 @@ export const products = [
         sizes: ["Regular Fit"],
         date: 1716668445448,
         bestseller: false
+    },
+    {
+        _id: "p_a_2",
+        name: "aaa",
+        description: " ",
+        price: 1999,
+        image: [p_img_a1_1,p_img_a1_2,p_img_a1_3,p_img_a1_4],
+        category: "Accessories",
+        subCategory: "handbag",
+        sizes: ["Regular Fit"],
+        date: 1716668445448,
+        bestseller: false
+    }
+    ,
+    {
+        _id: "p_a_3",
+        name: "CROCS TOTE BAGS",
+        description: " ",
+        price: 199,
+        image: [p_img_a1_1,p_img_a1_2,p_img_a1_3,p_img_a1_4],
+        category: "Accessories",
+        subCategory: "Wallet",
+        sizes: ["Regular Fit"],
+        date: 1716668445448,
+        bestseller: false
     }
 
 ]

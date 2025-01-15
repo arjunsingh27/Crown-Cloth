@@ -10,7 +10,7 @@ const SearchBar = () => {
     
     useEffect(()=>{
       
-        if(location.pathname.includes('collection') || location.pathname.includes('mens')  || location.pathname.includes('kids')){
+        if(location.pathname.includes('collection') || location.pathname.includes('mens')  || location.pathname.includes('kids') || location.pathname.includes('accessories') ){
             setVisible(true);
 
            }else{
@@ -18,7 +18,7 @@ const SearchBar = () => {
            }
 
     },[location]);
-
+    //When Removing Visible in Accessories Search Bar is Working 
     return showSearch && Visible ? (
         <div className='  text-center'>
             <div className='inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-5 mx-3 rounded-full w-3/4 sm:w-3/2'>

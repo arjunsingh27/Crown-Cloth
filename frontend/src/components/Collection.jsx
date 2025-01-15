@@ -3,7 +3,6 @@ import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/frontend_assets/assets';
 import Title from './Title';
 import ProductItem from './ProductItem';
-import SearchBar from './SearchBar';
 
 const Collection = ({ defaultCategory }) => {
   const { products, showSearch, search } = useContext(ShopContext);
@@ -181,7 +180,7 @@ const Collection = ({ defaultCategory }) => {
       {/* Right Side */}
       <div className="flex-1">
         <div className="flex justify-between text-base sm:text-2xl mb-4">
-          <Title text1={'All '} text2={'Collections '} />
+          <Title text1={defaultCategory!="Collection" ? defaultCategory : "All"} text2={' Collections '} />
           {/* Sort Product */}
           <select
             className="border-2 border-gray-300 text-sm px-2"
