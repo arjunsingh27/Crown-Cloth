@@ -22,7 +22,7 @@ app.use(cors());
 
 // API Endpoints
 app.use("/api/user", userRouter);
-// app.use("/api/product", productRouter);
+app.use("/api/product", productRouter);
 
 //Live Server 
 app.listen(port, () => {
