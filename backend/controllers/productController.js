@@ -1,62 +1,42 @@
-
-
-//function for add product 
-const addProduct = async (req, res) => {
+// Function to add a product
+const addProducts = async (req, res) => {
   try {
-    const { name, description, price, category, subCategory, sizes, bestseller } = req.body;
+    const {subname,name,productdetail,description,price,category,sizes,subCategory,bestseller }  = req.body;
 
-    // Safely access images from `req.files`
-    const image1 = req.files?.image1 ? req.files.image1[0] : null;
-    const image2 = req.files?.image2 ? req.files.image2[0] : null;
-    const image3 = req.files?.image3 ? req.files.image3[0] : null;
-    const image4 = req.files?.image4 ? req.files.image4[0] : null;
-
-    // Log extracted values
-    console.log(name, description, price, category, subCategory, sizes, bestseller);
-    console.log(image1, image2, image3, image4);
+    // Extract images from req.files
+    const image1 = req.files?.image1?.[0] || null;
+    const image2 = req.files?.image2?.[0] || null;
+    const image3 = req.files?.image3?.[0] || null;
+    const image4 = req.files?.image4?.[0] || null;
 
     // Validate required fields
-    if (!name || !description || !price || !category || !subCategory || !sizes || !req.files) {
-      return res.status(400).json({ success: false, message: "Missing required fields" });
+    if (!name || !productdetail || !description || !price || !category || !sizes || !subCategory) {
+      return res.status(400).json({ success: false, message: "Missing required fields." });
     }
 
-    // Collect images into an array
-    const images = [image1, image2, image3, image4].filter(Boolean); // Only keep valid images
-
-    // Save to database (assuming `productModel` is imported)
-    const newProduct = new productModel({
-      name,
-      description,
-      price,
-      category,
-      subCategory,
-      sizes,
-      bestseller: bestseller === "true", // Convert bestseller to boolean
-      image: images,
-      date: Date.now(), // Add date dynamically
+    // Log the inputs for debugging
+    console.log("Received data:", {subname,name,productdetail,description,price,category,sizes,subCategory,bestseller,
     });
 
-    await newProduct.save();
+    console.log("Images received:", { image1, image2, image3, image4 });
 
-    res.status(201).json({ success: true, message: "Product added successfully", product: newProduct });
+    // Here you would save the product data to the database
+    // Simulating a successful response for now
+    res.status(200).json({ success: true, message: "Product added successfully!" });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: "An error occurred while adding the product" });
+    console.error("Error adding product:", error);
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
-//function for add product 
-const listProducts  = async(req,res)=>{
 
+// Function for list product
+const listProducts = async (req, res) => {};
 
-}
-//function for add product 
-const removeProduct= async(req,res)=>{
+// Function for removing product
+const removeProducts = async (req, res) => {};
 
+// Function for single product info
+const singleProducts = async (req, res) => {};
 
-}
-
-const singleProduct = async(req,res)=>{
-
-}
-export {addProduct,listProducts,removeProduct,singleProduct}
+export { addProducts, listProducts, removeProducts, singleProducts };
