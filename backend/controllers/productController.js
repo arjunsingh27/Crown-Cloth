@@ -108,16 +108,13 @@ const removeProducts = async (req, res) => {
 const singleProducts = async (req, res) => {
 
   try {
-    const {productId} = req.body;
+    const {productId} = req.body
     const product = await productModel.findById(productId)
-    res.json({success:true,product})
-
-  } catch (error) {
-    console.log(error)
-    res.json({success:false, message:error.message});
-    
-  }
-
+    res.json({success:true, product})
+} catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: error.message });
+}
  };
 
 export { addProducts, listProducts, removeProducts, singleProducts };
