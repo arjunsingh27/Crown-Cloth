@@ -1,18 +1,20 @@
 import { createContext,useEffect,useState } from "react";
-import { products } from "../assets/frontend_assets/assets";
+// import { products } from "../assets/frontend_assets/assets";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios"
 export const ShopContext = createContext();
 
 const currency = '₹';
 const deliveryFee = 50;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 
 const ShopContextProvider = ({ children }) => { // Destructure children from props
     const [search, setsearch] = useState();
     const [showSearch, setshowSearch] = useState(false);
     const [cartItems, setcartItems] = useState({});
+    const [products,setProducts] = useState([])
     
 
     const navigate =  useNavigate();
@@ -84,6 +86,21 @@ const ShopContextProvider = ({ children }) => { // Destructure children from pro
         return totalAmount;
     }
     
+
+    const getProductsData = async () => {
+        console.log("I got runned up ");
+        try {
+            const response = await axios.get(backendUrl+'/api/products/list');
+            setProducts(response.data.products);
+            console.log("Mongodb", response.data);
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        }
+    };
+    
+    useEffect(() => {
+        getProductsData();
+    }, []);
     
     // useEffect(()=>{
     //   console.log(cartItems)
@@ -95,6 +112,7 @@ const ShopContextProvider = ({ children }) => { // Destructure children from pro
         deliveryFee,
         search,setsearch,showSearch,setshowSearch,
         cartItems,addToCart,
+        backendUrl,
         getCartCount,
         updateQuatity,
         getCartAmount, navigate
