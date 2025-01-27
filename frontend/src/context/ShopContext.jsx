@@ -15,7 +15,8 @@ const ShopContextProvider = ({ children }) => { // Destructure children from pro
     const [search, setsearch] = useState();
     const [showSearch, setshowSearch] = useState(false);
     const [cartItems, setcartItems] = useState({});
-    // const [products,setProducts] = useState([])
+    const [products,setProducts] = useState([])
+    const [token,setToken]=useState("");
     
 
     const navigate =  useNavigate();
@@ -116,6 +117,7 @@ const ShopContextProvider = ({ children }) => { // Destructure children from pro
         backendUrl,
         getCartCount,
         updateQuatity,
+        setToken,
         getCartAmount, navigate
     };
 
