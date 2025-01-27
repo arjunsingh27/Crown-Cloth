@@ -14,7 +14,7 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const ShopContextProvider = ({ children }) => { // Destructure children from props
     const [search, setsearch] = useState();
     const [showSearch, setshowSearch] = useState(false);
-    const [cartItems, setcartItems] = useState({});
+    const [cartItems, setCartItems] = useState({});
     const [products,setProducts] = useState([])
     const [token,setToken]=useState("");
     
@@ -52,7 +52,7 @@ const ShopContextProvider = ({ children }) => { // Destructure children from pro
             cartData[itemId]= {};
             cartData[itemId][size] = 1;
         }
-        setcartItems(cartData);
+        setCartItems(cartData);
     }
   
     const getCartCount = () => {
@@ -66,7 +66,7 @@ const ShopContextProvider = ({ children }) => { // Destructure children from pro
     const updateQuatity = async (itemId,size,quantity)=>{
         let cartData = structuredClone(cartItems);
         cartData[itemId][size]=quantity;
-        setcartItems(cartData);
+        setCartItems(cartData);
     }
 
     const getCartAmount =   () => 
@@ -112,12 +112,18 @@ const ShopContextProvider = ({ children }) => { // Destructure children from pro
         products,
         currency,
         deliveryFee,
-        search,setsearch,showSearch,setshowSearch,
-        cartItems,addToCart,
+        search,
+        setsearch,
+        showSearch,
+        setshowSearch,
+        cartItems,
+        setCartItems,
+        addToCart,
         backendUrl,
         getCartCount,
         updateQuatity,
         setToken,
+        token,
         getCartAmount, navigate
     };
 
