@@ -1,6 +1,6 @@
 import { createContext,useEffect,useState } from "react";
 // import { products } from "../assets/frontend_assets/assets";
-
+    
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
@@ -142,6 +142,13 @@ const ShopContextProvider = ({ children }) => { // Destructure children from pro
           getUserCart(localStorage.getItem('token'))
         }
       },[])
+
+      useEffect(() => {
+        if (token) {
+            getUserCart(token);
+        }
+    }, [token]);
+    
     
     // useEffect(()=>{
     //   console.log(cartItems)
