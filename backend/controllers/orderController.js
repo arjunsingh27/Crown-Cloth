@@ -7,6 +7,7 @@ const placeOrder = async (req, res) => {
   try {
     const { userId, items, amount, address } = req.body;
 
+
     const orderData = {
       userId,
       items,
@@ -16,6 +17,7 @@ const placeOrder = async (req, res) => {
       payment: false,
       date: Date.now(),
     };
+    console.log(orderData);
 
     const newOrder = new orderModel(orderData);
     await newOrder.save();

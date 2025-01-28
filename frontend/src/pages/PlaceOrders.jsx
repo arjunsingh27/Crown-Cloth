@@ -3,12 +3,14 @@ import Title from "../components/Title";
 import CartTotal from "../components/CartTotal";
 import { assets } from '../assets/frontend_assets/assets';
 import { ShopContext } from '../context/ShopContext';
+import toast from 'react-hot-toast';
+import axios from "axios";
 
 const PlaceOrder = () => {
-  const { navigate , backendUrl ,token , cartItems , setCartItems , getCartAmount , delivery_fee,products} = useContext(ShopContext);
+  const { navigate , backendUrl ,token , cartItems , setCartItems , getCartAmount , deliveryFee,products} = useContext(ShopContext);
   const [method, setMethod] = useState('cod');
 
-  const [fromData, setFromData] = useState({
+  const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
@@ -23,31 +25,67 @@ const PlaceOrder = () => {
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setFromData((data) => ({ ...data, [name]: value }));
+    setFormData((data) => ({ ...data, [name]: value }));
   };
 
-  const onSubmitHandler = async (event)=>{
-    event.preventDefault()
+  const onSubmitHandler = async (event) => {
+    event.preventDefault();
     try {
-      let orderItems=[]
-      for(const items in cartItems){
-        for(const item in cartItems[items]){
-          if(cartItems[items][item]>0){
-            const itemInfo = structuredClone(products.find(product => product._id === items))
-            if(itemInfo){
+      let orderItems = [];
+      for (const items in cartItems) {
+        for (const item in cartItems[items]) {
+          if (cartItems[items][item] > 0) {
+            const itemInfo = structuredClone(products.find(product => product._id === items));
+            if (itemInfo) {
               itemInfo.size = item;
-              itemInfo.quantity = cartItems[items][item]
+              itemInfo.quantity = cartItems[items][item];
               orderItems.push(itemInfo);
             }
           }
         }
-          
       }
-      console.log(orderItems);
-    } catch (error) {
+
+      try {
+        let orderData = {
+          address: formData,
+          items: orderItems,
+          amount: getCartAmount() + deliveryFee,
+          
+        };
+        console.log(orderData.amount);
       
+        switch (method) {
+          case 'cod': // API call for COD order
+            const response = await axios.post(
+              `${backendUrl}/api/order/place`,
+              orderData,
+              { headers: { token } }
+            );
+      
+            if (response.data.success) {
+              // Handle successful response
+              setCartItems({});
+              navigate('/orders');
+              toast.success(response.data.message);
+              console.log('Order placed successfully:', response.data);
+            } else {
+              // Handle failure response
+              toast.error(response.data.message);
+              console.error('Order failed:', response.data.message);
+            }
+            break;
+      
+          default:
+            console.warn('Invalid payment method:', method);
+            break;
+        }
+      } catch (error) {
+        console.error('Error placing order:', error.message);
+      }
+    } catch (error) {
+      console.error('Error processing the order:', error.message);
     }
-  }
+  };
 
   return (
     <form onSubmit={onSubmitHandler} className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[-80vh] border-t">
@@ -59,7 +97,7 @@ const PlaceOrder = () => {
           <input 
             onChange={onChangeHandler} 
             name="firstName" 
-            value={fromData.firstName} 
+            value={formData.firstName} 
             type="text" 
             className="border border-gray-300 rounded py-1.5 px-3.5 w-full" 
             placeholder="First Name" 
@@ -68,7 +106,7 @@ const PlaceOrder = () => {
           <input 
             onChange={onChangeHandler} 
             name="lastName" 
-            value={fromData.lastName} 
+            value={formData.lastName} 
             type="text" 
             className="border border-gray-300 rounded py-1.5 px-3.5 w-full" 
             placeholder="Last Name" 
@@ -78,7 +116,7 @@ const PlaceOrder = () => {
         <input 
           onChange={onChangeHandler} 
           name="email" 
-          value={fromData.email} 
+          value={formData.email} 
           type="email" 
           className="border-gray-300 border rounded py-1.5 px-3.5 w-full" 
           placeholder="Email" 
@@ -87,7 +125,7 @@ const PlaceOrder = () => {
         <input 
           onChange={onChangeHandler} 
           name="street" 
-          value={fromData.street} 
+          value={formData.street} 
           type="text" 
           className="border-gray-300 border rounded py-1.5 px-3.5 w-full" 
           placeholder="Street" 
@@ -97,7 +135,7 @@ const PlaceOrder = () => {
           <input 
             onChange={onChangeHandler} 
             name="city" 
-            value={fromData.city} 
+            value={formData.city} 
             type="text" 
             className="border-gray-300 border rounded py-1.5 px-3.5 w-full" 
             placeholder="City" 
@@ -106,7 +144,7 @@ const PlaceOrder = () => {
           <input 
             onChange={onChangeHandler} 
             name="state" 
-            value={fromData.state} 
+            value={formData.state} 
             type="text" 
             className="border-gray-300 border rounded py-1.5 px-3.5 w-full" 
             placeholder="State" 
@@ -117,7 +155,7 @@ const PlaceOrder = () => {
           <input 
             onChange={onChangeHandler} 
             name="zipcode" 
-            value={fromData.zipcode} 
+            value={formData.zipcode} 
             type="number" 
             className="border-gray-300 border rounded py-1.5 px-3.5 w-full" 
             placeholder="Zip Code" 
@@ -126,7 +164,7 @@ const PlaceOrder = () => {
           <input 
             onChange={onChangeHandler} 
             name="country" 
-            value={fromData.country} 
+            value={formData.country} 
             type="text" 
             className="border-gray-300 border rounded py-1.5 px-3.5 w-full" 
             placeholder="Country" 
@@ -136,7 +174,7 @@ const PlaceOrder = () => {
         <input 
           onChange={onChangeHandler} 
           name="phone" 
-          value={fromData.phone} 
+          value={formData.phone} 
           type="number" 
           className="border-gray-300 border rounded py-1.5 px-3.5 w-full" 
           placeholder="Phone Number" 
@@ -164,7 +202,7 @@ const PlaceOrder = () => {
               <p className="text-gray-500 text-sm font-medium mx-4">CASH ON DELIVERY</p>
             </div>
           </div>
-          <div  className="w-full text-end mt-8">
+          <div className="w-full text-end mt-8">
             <button type='submit' className="bg-black text-white px-16 py-3 text-sm">PLACE ORDER</button>
           </div>
         </div>
@@ -174,6 +212,3 @@ const PlaceOrder = () => {
 };
 
 export default PlaceOrder;
-
-
-// onClick={() => navigate('/orders')}
