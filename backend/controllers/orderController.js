@@ -42,17 +42,40 @@ const placeOrderRazorpay = async (req, res) => {
 
 // Fetch All Orders
 const allOrders = async (req, res) => {
-  
+  try {
+    const orders = await orderModel.find({})
+    res.json({success:true,orders})
+  } catch (error) {
+    console.error(error);
+    res.json({ success: false, message: error.message });
+  }
 };
 
 // Fetch User-Specific Orders
 const userOrders = async (req, res) => {
-  
+  try {
+    const { userId } = req.body;
+    const orders = await orderModel.find({ userId });
+    res.json({ success: true, orders });
+  } catch (error) {
+    console.error(error);
+    res.json({ success: false, message: error.message });
+  }
 };
+
+
 
 // Update Order Status
 const updateStatus = async (req, res) => {
-  
+  try {
+    const {orderId , status} = req.body;
+    await orderModel.findByIdAndUpdate(orderId,{status})
+    res.json({success:true,message:"Status Updated"})
+
+  } catch (error) {
+    console.error(error);
+    res.json({ success: false, message: error.message });
+  }
 };
 
 export {
