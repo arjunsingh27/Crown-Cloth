@@ -72,12 +72,12 @@ const addProducts = async (req, res) => {
 
     const product = new productModel(productData);
     await product.save();
-    res.json({ success: true, message: "Product Added to MongoDb" });
+    res.json({ success: true, message: "Product Added to DataBase" });
 
     console.log("Images received:", imagesUrl);
   } catch (error) {
     console.error("Error adding product:", error);
-    res.status(500).json({ success: false, message: error.message });
+    res.status(500).json({ success: false, message: "Product Upload Failed Due to Large Size of Image or Due to Network Issue" });
   }
 };
 

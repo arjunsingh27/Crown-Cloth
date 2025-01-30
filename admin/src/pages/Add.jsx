@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import axios from "axios"; // Ensure axios is installed
 import { backendUrl } from "../App";
+import { toast } from "react-toastify";
 const Add = ({token}) => {
 
   const API_URL = import.meta.env.VITE_BACKEND_URL;
@@ -84,10 +85,10 @@ const Add = ({token}) => {
       );
 
       console.log("Product added successfully:", response.data);
-      alert("Product added successfully!");
+      toast.success(response.data.message);
     } catch (error) {
       console.error("Error adding product:", error.response?.data || error);
-      alert("Failed to add product. Please try again.");
+      toast.error(error.message);
     }
   };
 
@@ -215,7 +216,7 @@ const Add = ({token}) => {
       <div>
         <p className="mb-2">Sizes</p>
         <div className="flex gap-2">
-          {[6, 7, 8, 9, 10 ].map((size) => (
+          {[6, 7, 8, 9, 10 , "S" , "M" , "L" ].map((size) => (
             <p
               key={size}
               className={`bg-slate-200 px-3 py-1 cursor-pointer ${
