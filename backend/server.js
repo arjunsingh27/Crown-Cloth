@@ -17,7 +17,7 @@ connectCloudinary();
 
 // Middle Wares
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("Hello World For Vercel");
 });
 app.use(express.json());
 
