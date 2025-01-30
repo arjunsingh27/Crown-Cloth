@@ -213,7 +213,7 @@ const Add = ({token}) => {
       <div>
         <p className="mb-2">Sizes</p>
         <div className="flex gap-2">
-          {[6, 7, 8, 9, 10].map((size) => (
+          {[6, 7, 8, 9, 10 , "S" , "M" , "L" ].map((size) => (
             <p
               key={size}
               className={`bg-slate-200 px-3 py-1 cursor-pointer ${
