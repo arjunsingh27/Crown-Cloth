@@ -21,9 +21,10 @@ app.get("/", (req, res) => {
 });
 app.use(express.json());
 
-// CORS Configuration - Allowing all origins
+// CORS Configuration
 app.use(cors({
-  origin: '*', // Allow requests from any origin
+  origin: 'https://crown-cloth-frontend.vercel.app', // Allow only your frontend's domain
+  credentials: true, // If you're using cookies or other credentials
 }));
 
 // API Endpoints
