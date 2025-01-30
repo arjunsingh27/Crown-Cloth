@@ -20,14 +20,19 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 app.use(express.json());
-app.use(cors());
+
+// CORS Configuration - Allowing all origins
+app.use(cors({
+  origin: '*', // Allow requests from any origin
+}));
 
 // API Endpoints
 app.use("/api/user", userRouter);
 app.use("/api/products", productRouter);
-app.use("/api/cart",cartRouter);
-app.use("/api/order",orderRouter);
-//Live Server 
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
+
+// Live Server 
 app.listen(port, () => {
   console.log(`The server started on port ${port}`);
 });
