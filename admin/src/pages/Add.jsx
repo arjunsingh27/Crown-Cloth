@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import axios from "axios"; // Ensure axios is installed
-import { backendUrl} from "../App";
+import { backendUrl } from "../App";
 const Add = ({token}) => {
+
+  const API_URL = import.meta.env.VITE_BACKEND_URL;
+
   const [formData, setFormData] = useState({
     subname: "",
     name: "",
@@ -70,7 +73,8 @@ const Add = ({token}) => {
     });
 
     try {
-      const response = await axios.post(backendUrl+"/api/products/add",
+      console.log(backendUrl)
+      const response = await axios.post(`${API_URL}/api/products/add`,
         payload,
         {
           headers: {
