@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import axios from "axios"; // Ensure axios is installed
-
+import { backendUrl} from "../App";
 const Add = ({token}) => {
   const [formData, setFormData] = useState({
     subname: "",
@@ -70,8 +70,7 @@ const Add = ({token}) => {
     });
 
     try {
-      const response = await axios.post(
-        "http://localhost:4000/api/products/add",
+      const response = await axios.post(backendUrl+"/api/products/add",
         payload,
         {
           headers: {
