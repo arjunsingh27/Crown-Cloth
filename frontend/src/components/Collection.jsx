@@ -5,6 +5,9 @@ import Title from './Title';
 import ProductItem from './ProductItem';
 
 const Collection = ({ defaultCategory }) => {
+
+  console.log("Default Category "+ defaultCategory);
+
   const { products, showSearch, search } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
@@ -67,14 +70,10 @@ const Collection = ({ defaultCategory }) => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
-
-  useEffect(() => {
-    setFilterProducts(products);
-  }, [products]);
-
+ 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory, search, showSearch]);
+  }, [category, subCategory, search, showSearch,products]);
 
   useEffect(() => {
     sortProducts();
