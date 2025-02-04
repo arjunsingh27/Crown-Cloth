@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { AlertCircle, Check } from 'lucide-react';
-import { ShopContext } from '../context/ShopContext'
 
 const NewsletterBox = () => {
-    const {token} = useContext(ShopContext);
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
      
@@ -16,18 +14,14 @@ const NewsletterBox = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post(`${backendUrl}/api/newsletter`, { email } ,{headers:{token}});
+            const response = await axios.post(`${backendUrl}/api/newsletter`, { email });
 
-            if (response.status === 200) {
-                toast.success('Successfully subscribed! Check your email for confirmation.', {
-                    icon: <Check className="h-4 w-4 text-green-600" />,
-                });
-                setEmail('');
-            } else {
-                throw new Error(response.data.message || 'Failed to subscribe');
-            }
+            toast.success(response.data.message || 'Successfully subscribed! Check your email for confirmation.', {
+                icon: <Check className="h-4 w-4 text-green-600" />,
+            });
+            setEmail('');
         } catch (error) {
-            toast.error(error.response?.data?.message || error.message, {
+            toast.error(error.response?.data?.message || 'Failed to subscribe', {
                 icon: <AlertCircle className="h-4 w-4 text-red-600" />,
             });
         } finally {
