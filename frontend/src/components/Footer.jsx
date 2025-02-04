@@ -1,42 +1,107 @@
-import React from "react";
-import { assets } from "../assets/frontend_assets/assets";
+import React from 'react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Clock, Heart } from 'lucide-react';
+import { assets } from '../assets/frontend_assets/assets';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <>
-      <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm">
-        <div>
-          <img src={assets.logo} alt="" className="mb-5 w-32 " />
-          <p className="w-full md:w-2/3 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur{" "}
-          </p>
-        </div>
-        <div>
-          <p className="text-xl font-medium mb-5"> Company</p>
-          <ul className="flex flex-col text-gray-600 gap-1 ">
-            <li>Home</li>
-            <li>About</li>
-            <li>Delivery</li>
-            <li>Company</li>
-            <li>Privacy Policy</li>
-          </ul>
-        </div>
-        <div>
-          <p className="text-xl font-medium mb-5"> Get in Touch</p>
-          <ul className="flex flex-col text-gray-600 gap-1">
-            <li>+123456789</li>
-            <li>+123456789</li>
-          </ul>
+    <footer className="w-full mt-16 bg-white">
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-4 lg:px-8 xl:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 py-16">
+          {/* Company Info */}
+          <div className="space-y-6">
+            <img src={assets.logo} alt="Company Logo" className="w-32 h-auto" />
+            <p className="text-gray-600 text-sm leading-relaxed max-w-md">
+            🚀 Crown Cloths – Your One-Stop Shop! <br />
+            Discover the best clothes, footwear, and accessories at unbeatable prices. Elevate your style with our exclusive collections.
+            Let me know if you need any more adjustments! 😊
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-gray-600 hover:text-blue-400 transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="text-gray-600 hover:text-pink-600 transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-gray-600 hover:text-blue-800 transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="lg:ml-8">
+  <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+  <ul className="flex flex-col gap-3">
+    <NavLink to="/" className="text-gray-600 transition-colors">
+      <li>Home</li>
+    </NavLink>
+    <NavLink to="/about" className="text-gray-600  transition-colors">
+      <li>About Us</li>
+    </NavLink>
+    <NavLink to="/termsandcondition" className="text-gray-600 transition-colors">
+      <li>Terms and Conditions</li>
+    </NavLink>
+    <NavLink to="/privacypolicy" className="text-gray-600 transition-colors">
+      <li>Privacy Policy</li>
+    </NavLink>
+    <NavLink to="/shippingpolicy" className="text-gray-600 transition-colors">
+      <li>Shipping Policy</li>
+    </NavLink>
+    <NavLink to="/cancellation-refunds" className="text-gray-600 transition-colors">
+      <li>Cancellation and Refunds</li>
+    </NavLink>
+  </ul>
+</div>
+
+
+
+
+          {/* Contact Info */}
+          <div className="lg:ml-8">
+            <h3 className="text-lg font-semibold mb-6">Get In Touch</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center space-x-3 text-gray-600">
+                <Phone size={18} className="flex-shrink-0" />
+                <span>+91-9759356471</span>
+              </li>
+              <li className="flex items-center space-x-3 text-gray-600">
+                <Mail size={18} className="flex-shrink-0" />
+                <span>crowncloths.in@gmail.com</span>
+              </li>
+              <li className="flex items-center space-x-3 text-gray-600">
+                <Clock size={18} className="flex-shrink-0" />
+                <span>Mon - Fri: 10:00 AM - 6:00 PM</span>
+              </li>
+              <li className="flex items-center space-x-3 text-gray-600">
+                <MapPin size={18} className="flex-shrink-0" />
+                <span>B-12, Connaught Place, New Delhi, Delhi 110001, India</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div>
-        <hr />
-        <p className="py-5 text-center text-sm">
-          {" "}
-          Copyright 2023@ crown-cloth All right Reserved
-        </p>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-200 w-full">
+        <div className="container mx-auto px-4 lg:px-8 xl:px-16">
+          <div className="flex flex-col md:flex-row justify-between items-center py-6">
+            <p className="text-sm text-gray-600 md:mb-0 mb-4">
+              © {new Date().getFullYear()} crowncloths.in - All Rights Reserved
+            </p>
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <span>Made with</span>
+              <Heart size={16} className="text-red-500 fill-current" />
+              <span>by Future Core Innovations</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </>
+    </footer>
   );
 };
 

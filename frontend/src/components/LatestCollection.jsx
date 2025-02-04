@@ -1,44 +1,64 @@
-import React, { useEffect, useState } from 'react'
-import { useContext } from 'react'
-import { ShopContext } from '../context/ShopContext'
-import Title from './Title'
-import ProductItem from './ProductItem'
+import React, { useState, useContext } from 'react';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { AlertCircle, Check } from 'lucide-react';
+import { ShopContext } from '../context/ShopContext';
 
-const LatestCollection = () => {
+const NewsletterBox = () => {
+    const { token } = useContext(ShopContext);
+    const [email, setEmail] = useState('');
+    const [loading, setLoading] = useState(false);
+     
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-    const {products} = useContext(ShopContext);
-    const [latestProducts,setLatestProducts] = useState([]);
+    const handleSubscribe = async (event) => {
+        event.preventDefault();
+        setLoading(true);
 
-    useEffect(()=>{
-        setLatestProducts(products.slice(0,10));
-    },[products]);
+        try {
+            const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
-    console.log("LATEST COLLECTION"+products);
-    const text1 = 'LATEST';
-  return (
-     <div className="my-10">
-        <div className="text-center py-8 text-3xl">
-            <Title text1={text1} text2={' COLLECTIONS'}/> 
-            <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-            Step into Style – Trendy Footwear, Chic Bags & Fashion-Forward Clothing!
+            const response = await axios.post(`${backendUrl}/api/newsletter`, { email }, { headers });
+
+            toast.success(response.data.message || 'Successfully subscribed! Check your email for confirmation.', {
+                icon: <Check className="h-4 w-4 text-green-600" />,
+            });
+            setEmail('');
+        } catch (error) {
+            toast.error(error.response?.data?.message || 'Failed to subscribe', {
+                icon: <AlertCircle className="h-4 w-4 text-red-600" />,
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <div className='text-center p-6'>
+            <p className='text-2xl font-medium text-gray-800'>Join Our Style Community & Save 20%</p>
+            <p className='text-gray-400 mt-3'>
+                Be first to know about new arrivals from local artisans and trending Instagram sellers.
             </p>
-        </div>
-         {/* Rendering Products */}
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 '>
-            {
-                latestProducts.map((item,index)=>(
-                    <ProductItem
-                    key={index} 
-                    id={item._id}
-                    image={item.image}
-                    name={item.name}
-                    price={item.price}
-                    />
-                ))
-            }
-        </div>
-     </div>
-  )
-}
 
-export default LatestCollection;
+            <form onSubmit={handleSubscribe} className='w-full sm:w-1/2 flex items-center gap-3 mx-auto my-6 border pl-3'>
+                <input
+                    className='w-full sm:flex-1 outline-none p-2'
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder='Enter Your Email'
+                    required
+                />
+                <button
+                    type='submit'
+                    className='bg-black text-white text-xs px-10 py-4 disabled:opacity-50'
+                    disabled={loading}
+                >
+                    {loading ? 'Subscribing...' : 'Subscribe'}
+                </button>
+            </form>
+        </div>
+    );
+};
+
+export default NewsletterBox;

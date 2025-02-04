@@ -17,6 +17,14 @@ import Kids from "./pages/Kids";
 import SearchBar from "./components/SearchBar";
 import { Toaster } from 'react-hot-toast';
 import Accessories from "./pages/Accessories";
+import TermsAndConditions from './pages/TermsCondition';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import ShippingPolicy from './pages/ShippingPolicy';
+import CancellationRefundPolicy from './pages/CancellationRefundPolicy';
+
+ 
+
+
 // import 'react-toastify/dist/ReactToastify.css';
 
 // // import { ToastContainer, toast } from 'material-react-toastify';
@@ -42,6 +50,11 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
+
+        <Route path='/termsandcondition' element={<TermsAndConditions/>}/>
+        <Route path='/privacypolicy' element={<PrivacyPolicy/>}/>
+        <Route path='/shippingpolicy' element={<ShippingPolicy/>}/>
+        <Route path='/cancellation-refunds' element={<CancellationRefundPolicy/>}/>
         
         
       </Routes>
