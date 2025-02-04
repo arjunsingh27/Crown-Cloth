@@ -21,6 +21,7 @@ import TermsAndConditions from './pages/TermsCondition';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ShippingPolicy from './pages/ShippingPolicy';
 import CancellationRefundPolicy from './pages/CancellationRefundPolicy';
+import { Analytics } from '@vercel/analytics/react';
 
  
 
@@ -59,6 +60,7 @@ const App = () => {
         
       </Routes>
       <Footer/>
+      <Analytics />
     </div>
   );
 };
