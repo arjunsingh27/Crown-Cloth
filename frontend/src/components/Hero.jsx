@@ -84,7 +84,7 @@ const Hero = () => {
 
             <motion.h1 
               variants={itemVariants}
-              className="prata-regular text-xl sm:text-5xl lg:text-6xl leading-tight"
+              className="prata-regular text-2xl sm:text-5xl lg:text-6xl leading-tight"
             >
               Discover the Latest in Footwear & Accessories
             </motion.h1>
