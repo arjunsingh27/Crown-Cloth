@@ -77,7 +77,7 @@ const createWelcomeEmail = (userEmail) => {
                     <!-- Social Links -->
                     <div style="margin-top: 20px; color: #999999; font-size: 12px;">
                         Follow us on social media for daily inspiration:<br/>
-                        <a href="#" style="color: #666666; text-decoration: none; margin: 0 10px;">Instagram</a> | 
+                        <a href="https://www.instagram.com/crowncloths/" style="color: #666666; text-decoration: none; margin: 0 10px;">Instagram</a> | 
                         <a href="#" style="color: #666666; text-decoration: none; margin: 0 10px;">Facebook</a> | 
                         <a href="#" style="color: #666666; text-decoration: none; margin: 0 10px;">Pinterest</a>
                     </div>
