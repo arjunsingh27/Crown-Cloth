@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,18 +14,6 @@ a.active hr{
     font-weight: 400;
     font-style: normal;
 }
-.light-luxiary{
-    
-        font-family: 'Playfair Display', serif;
-        font-size: 13px;
-        font-weight: 200;
-        /* text-transform: uppercase; */
-        letter-spacing: 2px;
-    
-    
-}
-
-
 ::-webkit-scrollbar{
     display: none;
 }
