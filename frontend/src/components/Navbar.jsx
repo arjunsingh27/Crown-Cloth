@@ -41,7 +41,7 @@ const Navbar = () => {
           alt="search_icon"
           className="w-5 cursor-pointer"
         />
-        <div className="group relative">
+        <div className="group relative z-10">
           <img
             onClick={() => (token ? null : navigate("/login"))}
             src={assets.profile_icon}
