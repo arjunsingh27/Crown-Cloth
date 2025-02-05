@@ -78,15 +78,15 @@ const Hero = () => {
                 className="w-11 h-[2px] bg-[#414141] origin-left"
               />
               <p className="font-medium text-sm md:text-base tracking-wide">
-                OUR BEST SELLER
+              OUR EXCLUSIVE SELECTION
               </p>
             </motion.div>
 
             <motion.h1 
               variants={itemVariants}
-              className="prata-regular text-4xl sm:text-5xl lg:text-6xl leading-tight"
+              className="prata-regular text-xl sm:text-5xl lg:text-6xl leading-tight"
             >
-              Latest Arrivals
+              Discover the Latest in Footwear & Accessories
             </motion.h1>
 
             <motion.div 
@@ -94,7 +94,7 @@ const Hero = () => {
               className="flex items-center gap-3 group cursor-pointer"
             >
               <p className="font-semibold text-sm md:text-base transform transition-all duration-300 ease-out group-hover:translate-x-2">
-                Shop NN
+              Explore Our Collection
               </p>
               <motion.div
                 initial={{ scaleX: 0 }}
