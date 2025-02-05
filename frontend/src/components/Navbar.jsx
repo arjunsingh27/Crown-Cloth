@@ -27,9 +27,9 @@ const Navbar = () => {
           <NavLink
             key={item}
             to={`/${item}`}
-            className="flex flex-col items-center gap-1"
+            className="flex flex-col items-center gap-2 "
           >
-            <p>{item.charAt(0).toUpperCase() + item.slice(1)}</p>
+            <p className=" light-luxiary  text-gray-600 hover:text-gray-800 transition ease-in">{item.charAt(0).toUpperCase() + item.slice(1)}</p>
             <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
           </NavLink>
         ))}
@@ -41,7 +41,7 @@ const Navbar = () => {
           alt="search_icon"
           className="w-5 cursor-pointer"
         />
-        <div className="group relative z-10">
+        <div className="group relative z-40">
           <img
             onClick={() => (token ? null : navigate("/login"))}
             src={assets.profile_icon}
