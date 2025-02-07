@@ -24,7 +24,7 @@ const Contact = () => {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 text-gray-600">
                 <MapPin size={18} className="flex-shrink-0" />
-                <span>B-12, Connaught Place, New Delhi, Delhi 110001, India</span>
+                <span> Ata Patti Janubi Bareilly , UttarPradesh , India</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-600">
                 <Phone size={18} className="flex-shrink-0" />
