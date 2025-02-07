@@ -81,7 +81,7 @@ const Product = () => {
               <img key={i} src={assets.star_icon} alt="" className="w-4 h-4" />
             ))}
             <img src={assets.star_dull_icon} alt="" className="w-4 h-4" />
-            <span className="text-sm text-gray-600 ml-2">(122 reviews)</span>
+            <span className="text-sm text-gray-600 ml-2 hidden">(No Review)</span>
           </div>
 
           {/* Price */}

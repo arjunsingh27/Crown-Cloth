@@ -86,7 +86,7 @@ const Hero = () => {
               variants={itemVariants}
               className="prata-regular text-2xl sm:text-5xl lg:text-6xl leading-tight"
             >
-              Discover the Latest in Footwear & Accessories
+              Stay Ahead of the Trends – Explore the Newest in Fashion!
             </motion.h1>
 
             <motion.div 

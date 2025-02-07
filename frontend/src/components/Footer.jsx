@@ -77,7 +77,7 @@ const Footer = () => {
                 <Clock size={18} className="flex-shrink-0" />
                 <span>Mon - Fri: 10:00 AM - 6:00 PM</span>
               </li>
-              <li className="flex items-center space-x-3 text-gray-600">
+              <li className="flex items-center space-x-3 text-gray-600 hidden">
                 <MapPin size={18} className="flex-shrink-0" />
                 <span>B-12, Connaught Place, New Delhi, Delhi 110001, India</span>
               </li>
