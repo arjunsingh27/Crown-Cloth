@@ -21,11 +21,11 @@ const Add = ({token}) => {
   });
 
   const categoryOptions = {
-    Men: ["Sneakers", "Boots", "Sandals"],
-    Women: ["Heels", "Flats", "Sandals"],
-    Kids: ["School Shoes", "Sports Shoes", "Sandals"],
-    Accessories: ["Handbags", "Perfume", "Watches"],
-  };
+    Men: ["Sneakers", "Boots", "Sandals", "Loafers", "Formal Shoes", "Slippers", "T-Shirts", "Jeans", "Shirts"],
+    Women: ["Heels", "Flats", "Sandals", "Wedges", "Ballet Flats", "Mules", "T-Shirts", "Jeans", "Shirts"],
+    Kids: ["School Shoes", "Sports Shoes", "Sandals", "Boots", "Sneakers", "Slip-ons", "T-Shirts", "Jeans", "Shirts"],
+    Accessories: ["Handbags", "Perfume", "Watches", "Belts", "Sunglasses", "Hats", "Scarves"],
+};
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -216,7 +216,7 @@ const Add = ({token}) => {
       <div>
         <p className="mb-2">Sizes</p>
         <div className="flex gap-2">
-          {[6, 7, 8, 9, 10 , "S" , "M" , "L" ].map((size) => (
+          {[5 ,6, 7, 8, 9, 10, "S", "M", "L", "XL", "XXL", "XXXL", 28, 30, 32, 34, 36, 38, 40].map((size) => (
             <p
               key={size}
               className={`bg-slate-200 px-3 py-1 cursor-pointer ${
