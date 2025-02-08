@@ -24,11 +24,11 @@ const Contact = () => {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 text-gray-600">
                 <MapPin size={18} className="flex-shrink-0" />
-                <span> Ata Patti Janubi Bareilly , UttarPradesh , India</span>
+                <span>B-53, Block B, Defence Colony, New Delhi, Delhi 110024, India</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-600">
                 <Phone size={18} className="flex-shrink-0" />
-                <span>+91-9759356471</span>
+                <span>+91-0013456788</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-600">
                 <Mail size={18} className="flex-shrink-0" />
